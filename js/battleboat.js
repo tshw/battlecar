@@ -269,7 +269,9 @@ function askRndQ() {
 
 	var ok = q[1].test(prompt(q[0]));
 
-	if (ok) alert("Correct!\nALAN PROST eyes you with conempt and withholds his rocket launcher fire for one turn.");
+	if (ok) {
+		alert("Correct!\nALAN PROST eyes you with conempt and withholds his rocket launcher fire for one turn.");
+	} else alert("Failure! ALAN PROST takes two shots!");
 
 	return
 }
@@ -301,6 +303,7 @@ Game.prototype.shootListener = function(e) {
 		// already clicked on yet
 		if (Math.random() > 0.5) {
 			if (!askRndQ()) {
+				self.robot.shoot()
 				self.robot.shoot()
 			}
 		} else {
