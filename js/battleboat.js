@@ -197,7 +197,7 @@ Game.prototype.checkIfWon = function() {
 		Game.stats.updateStatsSidebar();
 		this.showRestartSidebar();
 	} else if (this.humanFleet.allShipsSunk()) {
-		alert('Yarr! The computer sank all your ships. Try again.');
+		alert("You'll never win the British Grand Prix now!");
 		Game.gameOver = true;
 		Game.stats.lostGame();
 		Game.stats.syncStats();
@@ -239,8 +239,40 @@ Game.prototype.shoot = function(x, y, targetPlayer) {
 		return CONST.TYPE_MISS;
 	}
 };
+
+
+var questions = [
+	[
+		"How many penalty points do you get if you're caught driving using a handheld mobile phone?",
+		/^3$/g
+	],
+
+
+	[
+		"Give a number which you can call as a driver in a vehicle",
+		/999|112/g
+	],
+
+	[
+		"Give an example of a hands-free device you could use while driving",
+		/sat nav|radio|hands-?free/g
+	],
+
+	[
+		"Which side of the road should I walk on if there's no pavement?",
+		/right/g
+	]
+];
+
+function askRndQ() {
+	var q = questions[Math.floor(questions.length * Math.random())]
+
+	return q[1].test(prompt(q[0]))
+}
+
 // Creates click event listeners on each one of the 100 grid cells
 Game.prototype.shootListener = function(e) {
+
 	var self = e.target.self;
 	// Extract coordinates from event listener
 	var x = parseInt(e.target.getAttribute('data-x'), 10);
@@ -260,9 +292,17 @@ Game.prototype.shootListener = function(e) {
 		if (result === CONST.TYPE_HIT) {
 			Game.stats.hitShot();
 		}
+
 		// The AI shoots iff the player clicks on a cell that he/she hasn't
 		// already clicked on yet
-		self.robot.shoot();
+		if (Math.random() > 0.5) {
+			if (!askRndQ()) {
+				self.robot.shoot()
+			}
+		} else {
+			self.robot.shoot()
+		}
+
 	} else {
 		Game.gameOver = false;
 	}

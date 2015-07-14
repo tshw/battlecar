@@ -3,7 +3,7 @@ html, body {
 	width: 100%;
 	padding: 0;
 	margin: 0;
-	background-color: #ddd;
+	background-color: #fff;
 	min-width: 860px;
 }
 h1, h2, h3, h4, h5, h6, p, li, span {
@@ -26,7 +26,7 @@ button {
 	font-family: 'Open Sans', Helvetica, Arial, sans-serif;
 	font-size: 1.2em;
 	color: #EEEEEE;
-	background-color: #25567B;
+	background-color: #44DB46;
 	border: none;
 	margin: 1em auto 0 auto;
 	padding: 10px;
@@ -58,10 +58,8 @@ button {
 		}
 
 #prefetch1 {
-	background: url('../img/cross-icon.svg');
 }
 #prefetch2 {
-	background: url('../img/cross-icon.png');
 }
 #prefetch3 {
 	background: url('../img/crosshair.png');
@@ -167,7 +165,7 @@ button {
 	padding: 5px;
 	height: 420px;
 	width: 420px;
-	background-color: #25567B;
+	background-color: #44db46;
 	-webkit-border-radius: 5px;
 	-moz-border-radius: 5px;
 	border-radius: 5px;
@@ -183,12 +181,12 @@ button {
 		color: #EEEEEE;
 		font-size: 2em;
 	}
+
 	.grid-cell {
 		vertical-align: top; /*clears the vertical space between rows*/
 		height: 40px;
 		width: 40px;
 		display: inline-block;
-		background-color: #99C2E1;
 		margin: 1px;
 		-webkit-border-radius: 2px;
 		-moz-border-radius: 2px;
@@ -205,19 +203,17 @@ button {
 			cursor: url('../img/crosshair.png') 16 16, crosshair;
 		}
 	.grid-ship, .human-player .grid-ship:hover {
-		background-color: #808080;
+		background-color: #4A45FF;
 	}
 	.grid-miss, .grid-miss:hover, .human-player .grid-miss:hover {
 		background-color: #FFFFFF;
-		background-image: url('../img/cross-icon.png'); /* Fallback */
-		background-image: url('../img/cross-icon.svg');
 		background-position: center;
 		background-repeat: no-repeat;
 	}
 	.grid-hit, .grid-hit:hover, .human-player .grid-hit:hover {
 		background-color: #F60018;
-		background-image: url('../img/cross-icon.png'); /* Fallback */
-		background-image: url('../img/cross-icon.svg');
+/*		background-image: url('../e.gif'); Fallback
+		background-image: url('../e.gif'); */
 		background-position: center;
 		background-repeat: no-repeat;
 	}
