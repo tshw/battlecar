@@ -267,7 +267,11 @@ var questions = [
 function askRndQ() {
 	var q = questions[Math.floor(questions.length * Math.random())]
 
-	return q[1].test(prompt(q[0]))
+	var ok = q[1].test(prompt(q[0]));
+
+	if (ok) alert("Correct!\nALAN PROST eyes you with conempt and withholds his rocket launcher fire for one turn.");
+
+	return
 }
 
 // Creates click event listeners on each one of the 100 grid cells
