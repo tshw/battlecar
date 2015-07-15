@@ -197,7 +197,7 @@ Game.prototype.checkIfWon = function() {
 		Game.stats.updateStatsSidebar();
 		this.showRestartSidebar();
 	} else if (this.humanFleet.allShipsSunk()) {
-		alert("You'll never win the British Grand Prix now!");
+		alert("PROST wins again! Ahaha, you'll never win the British Grand Prix now!");
 		Game.gameOver = true;
 		Game.stats.lostGame();
 		Game.stats.syncStats();
